@@ -1,0 +1,46 @@
+.header-wrapper {
+    position: fixed;
+    width: 100%;
+}
+.header-lists-wrapper {
+    width: 96%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: black;
+    border-bottom-right-radius:15px;
+    border-bottom-left-radius:15px;
+    box-shadow: 0 0 10px 0 white;
+}
+
+.header-list{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.header-list-item {
+   padding: 25px 30px; 
+}
+
+.header-list-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.header-list-item i {
+    color: white;
+    font-size: 31px;
+    cursor: pointer;
+}
+
+.header-logo-wrapper {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%);
+}
