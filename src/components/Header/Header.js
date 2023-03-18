@@ -18,9 +18,15 @@ const Header = () => {
                 </li>
             </ul>
             <ul className='header-list'>
-                <li className='header-list-item'>
-                    <i className="fa-regular fa-circle-user"></i>
-                </li>
+                    <i className="fa-regular fa-circle-user">
+
+                    <div className="header-dropdown">
+                        <Link to={'#'}>login</Link>
+                        <Link to={'#'}>sign up</Link>
+                        <Link to={'#'}>my-trucks</Link>
+                        <Link to={'#'}>logout</Link>
+                    </div>
+                    </i>
             </ul>
             <div className='header-logo-wrapper'>
                 <Logo />
