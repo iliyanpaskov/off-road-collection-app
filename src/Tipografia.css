@@ -14,3 +14,7 @@ a {
     font-family: 'Raleway', sans-serif;
     text-transform: capitalize;
 }
+
+p{
+    font-size: 16px;
+}

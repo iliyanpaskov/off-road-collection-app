@@ -6,31 +6,30 @@ const Header = () => {
     return (
         <section className='header-wrapper'>
             <section className='header-lists-wrapper'>
-            <ul className='header-list'>
-                <li className='header-list-item'>
-                    <Link to={'/'}>home</Link>
-                </li>
-                <li className='header-list-item'>
-                    <Link to={'/'}>all off-road trukcs</Link>
-                </li>
-                <li className='header-list-item'>
-                    <Link to={'/'}>top 3 trucks</Link>
-                </li>
-            </ul>
-            <ul className='header-list'>
+                <ul className='header-list'>
+                    <li className='header-list-item'>
+                        <Link to={'/'}>home</Link>
+                    </li>
+                    <li className='header-list-item'>
+                        <Link to={'/'}>all off-road trukcs</Link>
+                    </li>
+                    <li className='header-list-item'>
+                        <Link to={'/'}>top 3 trucks</Link>
+                    </li>
+                </ul>
+                <ul className='header-list'>
                     <i className="fa-regular fa-circle-user">
-
-                    <div className="header-dropdown">
-                        <Link to={'#'}>login</Link>
-                        <Link to={'#'}>sign up</Link>
-                        <Link to={'#'}>my-trucks</Link>
-                        <Link to={'#'}>logout</Link>
-                    </div>
+                        <div className="header-dropdown">
+                            <Link to={'#'}>login</Link>
+                            <Link to={'#'}>sign up</Link>
+                            <Link to={'#'}>my-trucks</Link>
+                            <Link to={'#'}>logout</Link>
+                        </div>
                     </i>
-            </ul>
-            <div className='header-logo-wrapper'>
-                <Logo />
-            </div>
+                </ul>
+                <div className='header-logo-wrapper'>
+                    <Logo />
+                </div>
             </section>
         </section>
     )

@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <section className="footer-wrapper">
             <article className="footer">
-                <h3 className="footer-title">no road? <span>no problem</span></h3>
+                <h3 className="footer-title">no road <span>no problem</span></h3>
                 <ul className="footer-social-media-list">
                     <li className="footer-social-media-list-item">
                         <i className="fa-brands fa-square-facebook"></i>
