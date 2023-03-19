@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import './App.css';
 import './Tipografia.css';
 import { Routes, Route } from 'react-router-dom';
+import Catalog from './components/Catalog/Catalog';
 
 
 function App() {
@@ -13,10 +14,11 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path='/' element={<Home/>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/catalog' element={<Catalog />} />
         </Routes>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

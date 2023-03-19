@@ -7,6 +7,12 @@ body {
     background-attachment: fixed;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+} 
+
 body::before {
     content: "";
     position: fixed;
@@ -18,12 +24,8 @@ body::before {
 }
 
 main {
+    width: 90%;
     min-height: 80vh;
     padding: 150px 30px;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
+    margin: 0 auto;
 }

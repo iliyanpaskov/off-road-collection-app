@@ -18,7 +18,6 @@
 }
 
 .home-content-wrapper{
-    width: 90%;
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
@@ -34,9 +33,12 @@
     box-shadow: 0 0 10px 0 black;
 }
 
+.home-content-tile{
+    font-size: 29px;
+}
+
 .home-content{
     width: 30%;
     line-height: 1.6rem;
     text-align: center;
-
 }
