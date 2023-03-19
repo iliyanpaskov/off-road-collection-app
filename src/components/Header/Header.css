@@ -24,10 +24,6 @@
     display: flex;
 }
 
-.header-list-item {
-    padding: 25px 30px;
-}
-
 .header-list-item a {
     color: white;
     text-decoration: none;
@@ -38,7 +34,7 @@
 .header-list i {
     color: white;
     font-size: 31px;
-    padding: 25px 30px;
+    padding: 25px 35px;
     cursor: pointer;
 }
 
@@ -51,8 +47,15 @@
     display: none;
     position: absolute;
     top: 100%;
-    right: 5%;
     z-index: 2;
+}
+
+.header-dropdown-left{
+    left: 0%;
+}
+
+.header-dropdown-right{
+    right: 0%;
 }
 
 .header-dropdown a {

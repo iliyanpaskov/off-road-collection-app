@@ -7,19 +7,17 @@ const Header = () => {
         <section className='header-wrapper'>
             <section className='header-lists-wrapper'>
                 <ul className='header-list'>
-                    <li className='header-list-item'>
-                        <Link to={'/'}>home</Link>
-                    </li>
-                    <li className='header-list-item'>
-                        <Link to={'/catalog'}>all off-road trukcs</Link>
-                    </li>
-                    <li className='header-list-item'>
-                        <Link to={'/'}>top 3 trucks</Link>
-                    </li>
+                    <i className="fa-solid fa-house-chimney">
+                        <div className="header-dropdown header-dropdown-left">
+                            <Link to={'/'}>home</Link>
+                            <Link to={'/catalog'}>all off-road trukcs</Link>
+                            <Link to={'/'}>top 3 trucks</Link>
+                        </div>
+                    </i>
                 </ul>
                 <ul className='header-list'>
                     <i className="fa-regular fa-circle-user">
-                        <div className="header-dropdown">
+                        <div className="header-dropdown header-dropdown-right">
                             <Link to={'#'}>login</Link>
                             <Link to={'#'}>sign up</Link>
                             <Link to={'#'}>my-trucks</Link>
