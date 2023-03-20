@@ -4,7 +4,15 @@ import './Catalog.css';
 
 const Catalog = () => {
     return (
-        <section>
+        <section className='catalog'>
+            <CatalogCard/>
+            <CatalogCard/>
+            <CatalogCard/>
+            <CatalogCard/>
+            <CatalogCard/>
+            <CatalogCard/>
+            <CatalogCard/>
+            <CatalogCard/>
             <CatalogCard/>
         </section>
     )

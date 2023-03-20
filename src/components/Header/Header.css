@@ -10,6 +10,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background: black;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -24,7 +25,7 @@
     display: flex;
 }
 
-.header-list-item a {
+.header-list a {
     color: white;
     text-decoration: none;
     font-size: 17px;
@@ -72,9 +73,49 @@
     box-shadow: 0 0 10px 0 white;
 }
 
+.header-dropdown a:hover {
+    color: black;
+    background: orange;
+}
+
+.header-title-wrapper{
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    
+}
+
+.header-title{
+    color: white;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.header-title::before {
+    content: '';
+    background: url('../../../public/images/star.png');
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+}
+
+.header-title::after {
+    content: '';
+    background: url('../../../public/images/star.png');
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+}
+
 .header-logo-wrapper {
     position: absolute;
-    top: -30%;
+    top: -25%;
     left: 50%;
     transform: translate(-50%);
 }

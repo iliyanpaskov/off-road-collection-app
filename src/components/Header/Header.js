@@ -11,10 +11,14 @@ const Header = () => {
                         <div className="header-dropdown header-dropdown-left">
                             <Link to={'/'}>home</Link>
                             <Link to={'/catalog'}>all off-road trukcs</Link>
-                            <Link to={'/'}>top 3 trucks</Link>
+                            <Link to={'/best-trucks'}>top 3 trucks</Link>
                         </div>
                     </i>
                 </ul>
+                <article className='header-title-wrapper'>
+                    <h1 className='header-title'>No Road</h1>
+                    <h1 className='header-title'>No problem</h1>
+                </article>
                 <ul className='header-list'>
                     <i className="fa-regular fa-circle-user">
                         <div className="header-dropdown header-dropdown-right">
