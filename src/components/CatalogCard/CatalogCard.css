@@ -14,8 +14,10 @@
 
 .card-img-wrapper img {
     width: 100%;
+    max-height: 240px;
     border-radius: 10px;
     box-shadow: 0 0 9px 3px black;
+    object-fit: cover;
 }
 
 .card-content {

@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import './Tipografia.css';
+import Login from './components/Login/Login';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/best-trucks' element={<BestTrucks />} />
+          <Route path='/login' element={<Login />} />
 
         </Routes>
       </main>

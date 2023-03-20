@@ -22,7 +22,7 @@ const Header = () => {
                 <ul className='header-list'>
                     <i className="fa-regular fa-circle-user">
                         <div className="header-dropdown header-dropdown-right">
-                            <Link to={'#'}>login</Link>
+                            <Link to={'/login'}>login</Link>
                             <Link to={'#'}>sign up</Link>
                             <Link to={'#'}>my-trucks</Link>
                             <Link to={'#'}>logout</Link>

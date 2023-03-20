@@ -4,17 +4,20 @@ import './Catalog.css';
 
 const Catalog = () => {
     return (
-        <section className='catalog'>
-            <CatalogCard/>
-            <CatalogCard/>
-            <CatalogCard/>
-            <CatalogCard/>
-            <CatalogCard/>
-            <CatalogCard/>
-            <CatalogCard/>
-            <CatalogCard/>
-            <CatalogCard/>
-        </section>
+        <>
+            <h1 className='catalog-title'>all off-road trucks</h1>
+            <section className='catalog'>
+                <CatalogCard />
+                <CatalogCard />
+                <CatalogCard />
+                <CatalogCard />
+                <CatalogCard />
+                <CatalogCard />
+                <CatalogCard />
+                <CatalogCard />
+                <CatalogCard />
+            </section>
+        </>
     )
 }
 

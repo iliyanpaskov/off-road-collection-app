@@ -1,5 +1,12 @@
-.catalog{
+.catalog {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.catalog-title {
+    color:white;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
 }
