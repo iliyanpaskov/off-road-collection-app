@@ -23,7 +23,7 @@ const CatalogCard = () => {
             </div>
             <ul className='card-btns-list'>
                 <li className='card-btns-list-item details-btn'>
-                    <Link to={'/'}>details</Link>
+                    <Link to={'/details'}>details</Link>
                 </li>
                 <li className='card-btns-list-item update-btn'>
                     <Link to={'/'}>update</Link>
