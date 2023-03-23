@@ -1,0 +1,31 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    border: 25px solid #d3cece;
+    border-radius: 50%;
+    border-top: 25px solid #020202;
+    border-bottom: 25px solid #020202;
+    width: 200px;
+    height: 200px;
+    animation: spin 1.5s linear infinite;
+    align-self: center;
+}
+
+@media all and (max-width:480px) {
+    .loader {
+        margin-left: -75px;
+        width: 150px;
+        height: 150px;
+    }
+}
