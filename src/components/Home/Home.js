@@ -1,19 +1,6 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchTrucks, getTrucksStatus } from '../../redux/features/trucksSlice';
-
 import './Home.css';
 
 const Home = () => {
-    const dispatch = useDispatch();
-
-    const trucksStatus = useSelector(getTrucksStatus);
-
-    useEffect(() => {
-        if (trucksStatus === 'idle') {
-            dispatch(fetchTrucks());
-        }
-    }, [trucksStatus, dispatch])
 
     return (
         <section className='home-wrapper'>

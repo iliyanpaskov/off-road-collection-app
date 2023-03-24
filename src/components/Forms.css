@@ -72,3 +72,9 @@
     align-self: flex-end;
 }
 
+.form-error{
+    color: red;
+    font-size: 17px;
+    font-weight: 600;
+}
+

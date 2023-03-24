@@ -1,8 +1,12 @@
-import Logo from '../common/Logo/Logo';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
+import Logo from '../common/Logo/Logo';
 import './Header.css';
 
 const Header = () => {
+    const {logoutData} = useContext(AuthContext);
+
     return (
         <section className='header-wrapper'>
             <section className='header-lists-wrapper'>

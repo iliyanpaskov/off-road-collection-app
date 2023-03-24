@@ -12,11 +12,7 @@ export const fetchTrucks = createAsyncThunk('trucks/fetchTrucks', getAllTrucks);
 export const trucksSlice = createSlice({
     name: 'trucks',
     initialState,
-    reducers: {
-        allTrucks(state, action) {
-            state.trucks = action.payload.map(x => state.trucks.push(x));
-        },
-    },
+    reducers: {},
     extraReducers(builder) {
         builder
             .addCase(fetchTrucks.pending, (state) => {
