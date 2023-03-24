@@ -6,7 +6,7 @@ import './Catalog.css';
 
 const Catalog = () => {
     const trucks = useSelector(selectAllTrucks);
-    const isloaded = useSelector(getTrucksStatus)
+    const isloaded = useSelector(getTrucksStatus);
     return (
         <>
             <h1 className='catalog-title'>all off-road trucks</h1>

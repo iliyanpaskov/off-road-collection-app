@@ -4,12 +4,21 @@
     justify-content: space-around;
 }
 
-.details-card-likes-count {
-    font-size: 45px;
-    font-weight: 800;
-    color: rgb(255, 238, 0);
 
+.details-card-likes-count {
+    background: linear-gradient(to bottom, #cfc09f 22%, #634f2c 24%, #cfc09f 26%, #cfc09f 27%, #ffecb3 40%, #ce931c 78%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 60px;
+    margin: 0;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgb(255 221 0 / 28%);
 }
+
 
 .details-card-medal-wrapper {
     width: 100px;
@@ -25,10 +34,10 @@
     margin: 0;
     color: black;
     font-size: 48px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
     top: 35%;
     left: 50%;
-    text-shadow:2px 1px 10px yellow;
+    text-shadow: -2px 1px 2px #fffb01;
     transform: translate(-50%, -50%);
 }
