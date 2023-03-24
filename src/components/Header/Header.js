@@ -5,7 +5,29 @@ import Logo from '../common/Logo/Logo';
 import './Header.css';
 
 const Header = () => {
-    const {logoutData} = useContext(AuthContext);
+    const { logoutData, isAuthenticated } = useContext(AuthContext);
+
+    const logoutHandler = ()=>{
+        logoutData();
+    }
+
+    const GuestHeaderOptions = () => {
+        return (
+            <div className="header-dropdown header-dropdown-right">
+                <Link to={'/login'}>login</Link>
+                <Link to={'/sign-up'}>sign up</Link>
+            </div>
+        )
+    }
+
+    const UserHeaderOptions = () => {
+        return (
+            <div className="header-dropdown header-dropdown-right">
+                <Link to={'/my-trucks'}>my-trucks</Link>
+                <Link to={'#'} onClick={logoutHandler}>logout</Link>
+            </div>
+        )
+    }
 
     return (
         <section className='header-wrapper'>
@@ -25,12 +47,11 @@ const Header = () => {
                 </article>
                 <ul className='header-list'>
                     <i className="fa-regular fa-circle-user">
-                        <div className="header-dropdown header-dropdown-right">
-                            <Link to={'/login'}>login</Link>
-                            <Link to={'/sign-up'}>sign up</Link>
-                            <Link to={'#'}>my-trucks</Link>
-                            <Link to={'#'}>logout</Link>
-                        </div>
+                        {
+                            isAuthenticated
+                                ? <UserHeaderOptions/>
+                                : <GuestHeaderOptions/>
+                        }
                     </i>
                 </ul>
                 <div className='header-logo-wrapper'>

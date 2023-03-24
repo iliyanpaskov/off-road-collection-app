@@ -10,6 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import './Tipografia.css';
+import DetailsCard from './components/DetailsCard/DetailsCard';
 
 
 function App() {
@@ -19,7 +20,10 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/catalog' element={<Catalog />} />
+          <Route path='/catalog' >
+            <Route index element={<Catalog />} />
+            <Route path=':objectId' element={<DetailsCard />} />
+          </Route>
           <Route path='/best-trucks' element={<BestTrucks />} />
           <Route path='/login' element={<Login />} />
           <Route path='/sign-up' element={<SignUp />} />

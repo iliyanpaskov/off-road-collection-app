@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import './CatalogCard.css';
 
 
-const CatalogCard = ({truck}) => {
+const CatalogCard = ({ truck }) => {
+
+    const { isAuthenticated, user } = useContext(AuthContext);
+
     return (
         <section className='card-wrapper'>
             <div className='card-img-wrapper'>
@@ -23,12 +28,18 @@ const CatalogCard = ({truck}) => {
                 </article>
             </div>
             <ul className='card-btns-list'>
-                <li className='card-btns-list-item details-btn'>
-                    <Link to={'/details'}>details</Link>
-                </li>
-                <li className='card-btns-list-item update-btn'>
-                    <Link to={'/'}>update</Link>
-                </li>
+                {isAuthenticated
+                    ? <li className='card-btns-list-item details-btn'>
+                        <Link to={`${truck.objectId}`}>details</Link>
+                    </li>
+                    : null
+                }
+                {isAuthenticated && truck.ownerId === user.objectId
+                    ? <li className='card-btns-list-item update-btn'>
+                        <Link to={'/'}>update</Link>
+                    </li>
+                    : null
+                }
             </ul>
             <article className='card-owner'>
                 <h1 className='card-owner-name'>{`added by:  ${truck.ownerName}`}</h1>
