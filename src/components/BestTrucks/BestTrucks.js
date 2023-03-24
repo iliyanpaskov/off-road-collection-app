@@ -1,4 +1,4 @@
-import DetailsCard from "../DetailsCard/DetailsCard";
+import TopTruckCard from "../TopTruckCard/TopTruckCard";
 import "./BestTrucks.css";
 
 const BestTrucks = () => {
@@ -6,9 +6,7 @@ const BestTrucks = () => {
         <>
         <h1 className="best-trucks-title">top 3 off-road trucks</h1>
         <section className="best-trucks-wrapper">
-            <DetailsCard/>
-            <DetailsCard/>
-            <DetailsCard/>
+            <TopTruckCard/>
         </section>
         </>
     )

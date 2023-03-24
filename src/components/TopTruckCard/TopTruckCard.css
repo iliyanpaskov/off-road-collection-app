@@ -1,0 +1,34 @@
+.details-card-likes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.details-card-likes-count {
+    font-size: 45px;
+    font-weight: 800;
+    color: rgb(255, 238, 0);
+
+}
+
+.details-card-medal-wrapper {
+    width: 100px;
+    position: relative;
+}
+
+.details-card-medal-wrapper img {
+    width: 100%;
+}
+
+.place {
+    position: absolute;
+    margin: 0;
+    color: black;
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    top: 35%;
+    left: 50%;
+    text-shadow:2px 1px 10px yellow;
+    transform: translate(-50%, -50%);
+}

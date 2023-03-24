@@ -38,7 +38,6 @@ const DetailsCard = () => {
             </article>
             <article className='details-card-owner'>
                 <h1 className='details-card-owner-name'>added by: {currentTruck.ownerName}</h1>
-                {/* <button>See collection</button> */}
             </article>
         </article>
     )
