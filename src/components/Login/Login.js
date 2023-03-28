@@ -8,7 +8,7 @@ import { login } from "../../services/userServices";
 
 
 const Login = () => {
-    const { loginData,user } = useContext(AuthContext);
+    const { loginData } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const validate = values => {

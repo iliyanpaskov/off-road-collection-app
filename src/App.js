@@ -5,12 +5,13 @@ import Catalog from './components/Catalog/Catalog';
 import BestTrucks from './components/BestTrucks/BestTrucks';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import DetailsCard from './components/DetailsCard/DetailsCard';
+import MyTrucks from './components/MyTrucks/MyTrucks';
 
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import './Tipografia.css';
-import DetailsCard from './components/DetailsCard/DetailsCard';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route index element={<Catalog />} />
             <Route path=':objectId' element={<DetailsCard />} />
           </Route>
+          <Route path='/my-trucks' element={<MyTrucks />} />
           <Route path='/best-trucks' element={<BestTrucks />} />
           <Route path='/login' element={<Login />} />
           <Route path='/sign-up' element={<SignUp />} />

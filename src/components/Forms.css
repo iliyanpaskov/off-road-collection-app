@@ -1,4 +1,4 @@
-.form-wapper{
+.form-wapper {
     display: flex;
     flex-direction: column;
     margin: 20px auto;
@@ -9,14 +9,14 @@
     border-radius: 10px;
 }
 
-.form-title{
+.form-title {
     text-align: center;
     color: white;
     text-shadow: 3px 4px 3px black;
     font-size: 33px;
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,13 +29,13 @@
     margin: 20px 0;
 }
 
-.form-label{
+.form-label {
     color: white;
     font-size: 21px;
     text-shadow: 2px 2px 3px black;
 }
 
-.form-input{
+.form-input {
     height: 28px;
     margin: 5px 0;
     border-radius: 8px;
@@ -72,9 +72,44 @@
     align-self: flex-end;
 }
 
-.form-error{
+.form-error {
     color: red;
     font-size: 17px;
     font-weight: 600;
 }
+
+.form-textarea{
+    height: 120px;
+    resize: none;
+}
+
+.add-file {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-label-image{
+    color: white;
+    cursor: pointer;
+    font-size: 21px;
+    background: #b4650a;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px -3px whitesmoke;
+}
+
+.form-label-image i{
+    margin-right: 10px;
+}
+
+.add-image-input{
+    display: none;
+}
+
+
+
+
 

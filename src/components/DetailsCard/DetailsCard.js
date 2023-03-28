@@ -6,9 +6,6 @@ import "./DetailsCard.css";
 const DetailsCard = () => {
     const truckId = useParams();
     const currentTruck = useSelector((state) => selectById(state, truckId.objectId));
-    console.log(currentTruck);
-    console.log(truckId.objectId);
-
 
     return (
         <article className="details-card-wrapper">
@@ -41,7 +38,6 @@ const DetailsCard = () => {
             </article>
         </article>
     )
-
 }
 
 export default DetailsCard;

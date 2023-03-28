@@ -31,6 +31,7 @@
 .details-card-content-wrapper {
     padding: 0 10px;
     width: 40%;
+    overflow: hidden;
 }
 
 .details-card-content {
@@ -55,7 +56,7 @@
     line-height: 1.3rem;
 }
 
-.details-card-owner-name{
+.details-card-owner-name {
     font-size: 25px;
     margin: 0;
     padding: 5px;
