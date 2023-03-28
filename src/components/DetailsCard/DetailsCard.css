@@ -56,6 +56,13 @@
     line-height: 1.3rem;
 }
 
+.details-card-owner{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+}
+
 .details-card-owner-name {
     font-size: 25px;
     margin: 0;

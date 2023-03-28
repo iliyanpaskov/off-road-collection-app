@@ -13,7 +13,7 @@ export const trucksSlice = createSlice({
     name: 'trucks',
     initialState,
     reducers: {
-        allTrucks: {
+        addTruckLikes: {
         }
 
 
@@ -38,7 +38,6 @@ export const trucksSlice = createSlice({
 export const selectAllTrucks = (state) => state.trucks.trucks;
 export const getTrucksStatus = (state) => state.trucks.status;
 export const getTrucksError = (state) => state.trucks.error;
-
 
 export const selectById = (state, truckId) => state.trucks.trucks.find(truck => truck.objectId === truckId);
 

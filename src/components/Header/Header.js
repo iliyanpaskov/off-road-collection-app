@@ -23,7 +23,7 @@ const Header = () => {
     const UserHeaderOptions = () => {
         return (
             <div className="header-dropdown header-dropdown-right">
-                <Link to={'/my-trucks'}>my-trucks</Link>
+                {/* <Link to={'/my-trucks'}>my-trucks</Link> */}
                 <Link to={'#'} onClick={logoutHandler}>logout</Link>
             </div>
         )

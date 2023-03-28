@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectById } from "../../redux/features/trucksSlice";
 import "./DetailsCard.css";
+import SendLikeButton from "../SendLikeButton/SendLikeButton";
 
 const DetailsCard = () => {
     const truckId = useParams();
@@ -34,6 +35,7 @@ const DetailsCard = () => {
                 </div>
             </article>
             <article className='details-card-owner'>
+                <SendLikeButton/>
                 <h1 className='details-card-owner-name'>added by: {currentTruck.ownerName}</h1>
             </article>
         </article>

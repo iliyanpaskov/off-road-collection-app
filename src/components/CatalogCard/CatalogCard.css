@@ -70,7 +70,11 @@
     background: orange;
 }
 
-
+.card-owner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .card-owner-name{
     font-size: 19px;

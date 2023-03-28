@@ -1,13 +1,17 @@
 
 const signUpUrl = `${process.env.REACT_APP_SIGN_UP_URL}`;
+const trucksUrl = `${process.env.REACT_APP_CLASS_TRUCKS_URL}`;
+
+const headers = {
+    "X-Parse-Application-Id": `${process.env.REACT_APP_APPLICATION_ID}`,
+    "X-Parse-REST-API-Key": `${process.env.REACT_APP_API_KEY}`,
+    "X-Parse-Revocable-Session": `${process.env.REACT_APP_SESSION}`,
+    "Content-Type": "application/json",
+}
 
 const getSettigs = {
     method: "GET",
-    headers: {
-        "X-Parse-Application-Id": `${process.env.REACT_APP_APPLICATION_ID}`,
-        "X-Parse-REST-API-Key": `${process.env.REACT_APP_API_KEY}`,
-        "X-Parse-Revocable-Session": `${process.env.REACT_APP_SESSION}`,
-    }
+    headers
 }
 
 
@@ -26,16 +30,30 @@ export async function signUp(values) {
     try {
         const res = await fetch(signUpUrl, {
             method: "POST",
-            headers: {
-                "X-Parse-Application-Id": `${process.env.REACT_APP_APPLICATION_ID}`,
-                "X-Parse-REST-API-Key": `${process.env.REACT_APP_API_KEY}`,
-                "X-Parse-Revocable-Session": `${process.env.REACT_APP_SESSION}`,
-                "Content-Type": "application/json",
-            }, body: JSON.stringify(values)
+            headers,
+            body: JSON.stringify(values)
         });
         const data = await res.json();
         return data;
     } catch (error) {
         // TODO errors
+    }
+}
+
+
+export async function updateTruck(truckId, values) {
+    const likes = {
+        likes:values
+    }
+    try {
+        const res = await fetch(`${trucksUrl}/${truckId}`, {
+            method: "PUT",
+            headers,
+            body:JSON.stringify(likes)
+        });
+        const data = await res.json();
+        return data
+    } catch (error) {
+
     }
 }
