@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectById } from "../../redux/features/trucksSlice";
 import { getCommentsForCurrentTruck } from "../../redux/features/commentsSlice";
+import Comment from "../Comment/Comment"
 import SendLikeButton from "../SendLikeButton/SendLikeButton";
 import AddCommentForm from "../AddCommentForm/AddCommentForm";
 import "./DetailsCard.css";
@@ -9,8 +10,9 @@ import "./DetailsCard.css";
 const DetailsCard = () => {
     const truckId = useParams();
     const currentTruck = useSelector((state) => selectById(state, truckId.objectId));
-    const currentTruckComments = useSelector((state)=>getCommentsForCurrentTruck(state,truckId.objectId))
-    // console.log(currentTruckComments);
+    const currentTruckComments = useSelector((state) => getCommentsForCurrentTruck(state, truckId.objectId));
+    const hasComments = currentTruckComments.length > 0;
+    console.log(currentTruckComments);
     return (
         <section className="details-wrapper">
             <article className="details-card-wrapper">
@@ -45,14 +47,22 @@ const DetailsCard = () => {
             </article>
 
             <article className="comments-article-wrapper">
-                <article className="comments-article">
+                {
+                    hasComments
+                        ? <article className="comments-article">
+                            {currentTruckComments.map(x => <Comment key={x.objectId} comment={x}/>)}
+                        </article>
+                        : <>
+                            <h1 className="comments-article-title">no comments yet!</h1>
+                            <h1 className="comments-article-title">you can write the first one !</h1>
+                        </>
+                }
 
-                </article>
 
                 <article className="add-comments-form-wrapper">
-                    <AddCommentForm/>
+                    <AddCommentForm />
                 </article>
-                
+
             </article>
         </section>
     )

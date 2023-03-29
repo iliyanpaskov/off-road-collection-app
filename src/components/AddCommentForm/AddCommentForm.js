@@ -3,13 +3,16 @@ import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { addComment } from "../../services/userServices";
+import { useDispatch } from "react-redux";
 
 import "../Forms.css";
+import { commentAddded } from "../../redux/features/commentsSlice";
 
 const AddCommentForm = () => {
     const truckId = useParams().objectId;
     const { user } = useContext(AuthContext);
     const username = user.username;
+    const dispatch =useDispatch();
 
     const validate = values => {
         const errors = {};
@@ -30,10 +33,11 @@ const AddCommentForm = () => {
         onSubmit: (values, { resetForm }) => {
             const addNewComment = async () => {
                 await addComment(values);
+                dispatch(commentAddded(values))
             }
             addNewComment();
             resetForm({ values: "" })
-            console.log(values);
+            // console.log(values);
         }
     })
 

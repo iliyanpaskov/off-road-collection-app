@@ -14,7 +14,11 @@ export const commentsSlice = createSlice({
     name:'comments',
     initialState,
     reducers:{
-
+        commentAddded:{
+            reducer(state,action){
+                state.comments.push(action.payload)
+            }
+        }
     },
     extraReducers(builder){
         builder
@@ -37,6 +41,6 @@ export const getCommentsStatus = (state) => state.comments.status;
 
 export const getCommentsForCurrentTruck = (state,truckId) => state.comments.comments.filter(comment => comment.truckId ===truckId);
 
-
+export const {commentAddded} =commentsSlice.actions;
 
 export default commentsSlice.reducer;

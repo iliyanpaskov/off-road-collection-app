@@ -79,3 +79,9 @@
     color: greenyellow;
     text-shadow: 4px 6px 5px black;
 }
+
+.comments-article-title{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
