@@ -12,7 +12,7 @@ const DetailsCard = () => {
     const currentTruck = useSelector((state) => selectById(state, truckId.objectId));
     const currentTruckComments = useSelector((state) => getCommentsForCurrentTruck(state, truckId.objectId));
     const hasComments = currentTruckComments.length > 0;
-    console.log(currentTruckComments);
+    // console.log(currentTruckComments);
     return (
         <section className="details-wrapper">
             <article className="details-card-wrapper">
@@ -50,7 +50,7 @@ const DetailsCard = () => {
                 {
                     hasComments
                         ? <article className="comments-article">
-                            {currentTruckComments.map(x => <Comment key={x.objectId} comment={x}/>)}
+                            {currentTruckComments.map(x => <Comment key={x.objectId} comment={x} />)}
                         </article>
                         : <>
                             <h1 className="comments-article-title">no comments yet!</h1>

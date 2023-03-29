@@ -33,7 +33,7 @@ const AddCommentForm = () => {
         onSubmit: (values, { resetForm }) => {
             const addNewComment = async () => {
                 await addComment(values);
-                dispatch(commentAddded(values))
+                dispatch(commentAddded(values));
             }
             addNewComment();
             resetForm({ values: "" })
