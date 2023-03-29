@@ -1,6 +1,7 @@
 
 const signUpUrl = `${process.env.REACT_APP_SIGN_UP_URL}`;
 const trucksUrl = `${process.env.REACT_APP_CLASS_TRUCKS_URL}`;
+const commentsUrl = `${process.env.REACT_APP_CLASS_COMMENTS_URL}`;
 
 const headers = {
     "X-Parse-Application-Id": `${process.env.REACT_APP_APPLICATION_ID}`,
@@ -41,7 +42,7 @@ export async function signUp(values) {
 }
 
 
-export async function updateTruck(truckId, values) {
+export async function updateTruckLikes(truckId, values) {
     const likes = {
         likes:values
     }
@@ -54,6 +55,21 @@ export async function updateTruck(truckId, values) {
         const data = await res.json();
         return data
     } catch (error) {
+        // TODO errors
+    }
+}
 
+export async function addComment(values) {
+    try {
+        const res = await fetch (commentsUrl,{
+            method:"POST",
+            headers,
+            body:JSON.stringify(values)
+        });
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        // TODO errors
+        console.log(error);
     }
 }

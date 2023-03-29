@@ -1,9 +1,9 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { selectById, fetchTrucks } from "../../redux/features/trucksSlice";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { updateTruck } from "../../services/userServices";
+import { updateTruckLikes } from "../../services/userServices";
 import { store } from "../../redux/store";
 import "./SendLikeButton.css";
 
@@ -19,7 +19,7 @@ const SendLikeButton = () => {
         console.log(ownerId);
         async function addLikes() {
             const values = [...truckLikes, user.objectId]
-            await updateTruck(truckId.objectId, values);
+            await updateTruckLikes(truckId.objectId, values);
             store.dispatch(fetchTrucks());
         }
         addLikes();
