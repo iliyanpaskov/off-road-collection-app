@@ -9,15 +9,11 @@ const initialState = {
 
 export const fetchTrucks = createAsyncThunk('trucks/fetchTrucks', getAllTrucks);
 
+
 export const trucksSlice = createSlice({
     name: 'trucks',
     initialState,
-    reducers: {
-        addTruckLikes: {
-        }
-
-
-    },
+    reducers: {},
     extraReducers(builder) {
         builder
             .addCase(fetchTrucks.pending, (state) => {
@@ -42,7 +38,7 @@ export const getTrucksError = (state) => state.trucks.error;
 export const selectById = (state, truckId) => state.trucks.trucks.find(truck => truck.objectId === truckId);
 
 
-export const { allTrucks } = trucksSlice.actions;
+export const { addTruckLikes } = trucksSlice.actions;
 
 export default trucksSlice.reducer;
 

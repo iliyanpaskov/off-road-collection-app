@@ -37,7 +37,7 @@ const CatalogCard = ({ truck }) => {
                 }
                 {isAuthenticated && truck.ownerId === user.objectId
                     ? <li className='card-btns-list-item update-btn'>
-                        <Link to={'/'}>update</Link>
+                        <Link to={'/edit'}>Edit</Link>
                     </li>
                     : null
                 }

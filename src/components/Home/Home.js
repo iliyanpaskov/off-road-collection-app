@@ -7,6 +7,7 @@ const Home = () => {
             <article className='home-title-wrapper'>
                 <h1 className='home-title'>world with endless roads</h1>
                 <h1 className='home-title'>feel the freedom</h1>
+                <h1 className='home-title'>help us find out which ones are the best 3 off-road trucks !</h1>
             </article>
             <article className='home-content-wrapper'>
                 <div className='home-content-img-wrapper'>

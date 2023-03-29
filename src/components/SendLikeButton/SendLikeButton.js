@@ -12,22 +12,21 @@ const SendLikeButton = () => {
     const { user } = useContext(AuthContext);
     const truckId = useParams();
     const truckLikes = useSelector((state) => selectById(state, truckId.objectId)).likes;
-    const dispatch = useDispatch();
-    const isLiked = truckLikes.includes(user.objectId);
+    const ownerId = useSelector((state) => selectById(state, truckId.objectId)).ownerId;
+    const isLiked = truckLikes?.includes(user.objectId);
+    const isOwner = user.objectId === ownerId;
     const onClickHandler = () => {
+        console.log(ownerId);
         async function addLikes() {
             const values = [...truckLikes, user.objectId]
-            const result = await updateTruck(truckId.objectId, values);
+            await updateTruck(truckId.objectId, values);
             store.dispatch(fetchTrucks());
-            console.log(result);
-            console.log(truckId);
-
         }
         addLikes();
     };
     return (
         <>
-            {!isLiked
+            {!isLiked && !isOwner
                 ? <article className="send-like-btn-wrapper">
                     <i className="fa-solid fa-thumbs-up fa-beat" onClick={onClickHandler}></i>
                 </article>
