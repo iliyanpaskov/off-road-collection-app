@@ -1,4 +1,5 @@
 const url = `${process.env.REACT_APP_CLASS_TRUCKS_URL}`;
+const commentsUrl = `${process.env.REACT_APP_CLASS_COMMENTS_URL}`;
 
 const getSettigs = {
     method: "GET",
@@ -12,10 +13,19 @@ export async function getAllTrucks() {
         try {
             const res = await fetch(url,getSettigs);
             const data = await res.json();
-            // TODO errors
             return data.results;
         } catch (error) {
-
+            // TODO errors
         }
 }
 
+
+export async function getAllComments() {
+    try {
+        const res = await fetch(commentsUrl,getSettigs)
+        const data = await res.json();
+        return data.results;
+    } catch (error) {
+            // TODO errors
+    }
+}

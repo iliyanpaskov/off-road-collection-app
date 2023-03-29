@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectById } from "../../redux/features/trucksSlice";
+import { getCommentsForCurrentTruck } from "../../redux/features/commentsSlice";
 import SendLikeButton from "../SendLikeButton/SendLikeButton";
 import AddCommentForm from "../AddCommentForm/AddCommentForm";
 import "./DetailsCard.css";
@@ -8,7 +9,8 @@ import "./DetailsCard.css";
 const DetailsCard = () => {
     const truckId = useParams();
     const currentTruck = useSelector((state) => selectById(state, truckId.objectId));
-
+    const currentTruckComments = useSelector((state)=>getCommentsForCurrentTruck(state,truckId.objectId))
+    // console.log(currentTruckComments);
     return (
         <section className="details-wrapper">
             <article className="details-card-wrapper">

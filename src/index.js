@@ -6,10 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { fetchTrucks } from './redux/features/trucksSlice';
+import { fetchComments } from './redux/features/commentsSlice';
 import { AuthenticationProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 store.dispatch(fetchTrucks());
+store.dispatch(fetchComments())
 root.render(
   <React.StrictMode>
     <Provider store={store}>
