@@ -85,7 +85,6 @@ export const likesSlice = createSlice({
                     userId: values.userId,
                 }
                 state.likes.push(like);
-                console.log(like);
             })
             .addCase(fetchAddLikes.rejected, (state, action) => {
                 state.status = 'faild';
@@ -111,5 +110,6 @@ export const getTruckLikes = (state, truckId, userId) => state.likes.likes
     .filter(like => like.truckId === truckId)
     .filter(like => like.userId === userId);
 
+export const getAllLikes = (state) => state.likes.likes
 
 export default likesSlice.reducer;

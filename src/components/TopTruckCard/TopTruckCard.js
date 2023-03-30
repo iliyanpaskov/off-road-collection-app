@@ -2,7 +2,7 @@ import "./TopTruckCard.css";
 
 const TopTruckCard = ({
     truck,
-    i
+    place
 }) => {
 
     return (
@@ -34,10 +34,10 @@ const TopTruckCard = ({
             <article className='details-card-owner'>
                 <h1 className='details-card-owner-name'>{`added by: ${truck.ownerName}`} </h1>
                 <section className="details-card-likes">
-                    <article className="details-card-likes-count">{`${truck.likes.length} Likes !`}</article>
+                    <article className="details-card-likes-count">{`${truck.likes} Likes !`}</article>
                     <article className="details-card-medal-wrapper">
                         <img src="./images/medal.png" alt="medal" />
-                        <p className="place">{i}</p>
+                        <p className="place">{place}</p>
                     </article>
                 </section>
             </article>

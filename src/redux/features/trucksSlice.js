@@ -35,6 +35,7 @@ export const getTrucksStatus = (state) => state.trucks.status;
 export const getTrucksError = (state) => state.trucks.error;
 
 export const selectById = (state, truckId) => state.trucks.trucks.find(truck => truck.objectId === truckId);
+export const selectTopThreeTrucks = (state, firstId, secondId, thirdId) => state.trucks.trucks.filter(truck => truck.objectId === firstId || truck.objectId === secondId || truck.objectId === thirdId)
 
 export const { addTruckLikes } = trucksSlice.actions;
 
