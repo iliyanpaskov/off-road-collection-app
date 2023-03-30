@@ -11,6 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import './Tipografia.css';
+import PrivateRoute from './components/common/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -21,8 +22,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/catalog' >
-            <Route index element={<Catalog />} />
-            <Route path=':objectId' element={<DetailsCard />} />
+            <Route element={<PrivateRoute />}>
+              <Route index element={<Catalog />} />
+              <Route path=':objectId' element={<DetailsCard />} />
+            </Route>
           </Route>
           <Route path='/best-trucks' element={<BestTrucks />} />
           <Route path='/login' element={<Login />} />
