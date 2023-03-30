@@ -73,16 +73,3 @@ export async function addComment(values) {
         console.log(error);
     }
 }
-
-export async function deleteComment (commentId){
-    try {
-        const res = await fetch (`${commentsUrl}/${commentId}`,{
-            method:"DELETE",
-            headers,
-        });
-        const data = await res.json();
-        return data;
-    } catch (error) {
-        // TODO errors
-    }
-}

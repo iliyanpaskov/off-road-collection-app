@@ -2,11 +2,10 @@ import { useFormik } from "formik";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { addComment } from "../../services/userServices";
 import { useDispatch } from "react-redux";
+import { fetchAddComment } from "../../redux/features/commentsSlice";
 
 import "../Forms.css";
-import { commentAddded } from "../../redux/features/commentsSlice";
 
 const AddCommentForm = () => {
     const truckId = useParams().objectId;
@@ -32,12 +31,10 @@ const AddCommentForm = () => {
         validate,
         onSubmit: (values, { resetForm }) => {
             const addNewComment = async () => {
-                await addComment(values);
-                dispatch(commentAddded(values));
+                dispatch(fetchAddComment(values));
             }
             addNewComment();
             resetForm({ values: "" })
-            // console.log(values);
         }
     })
 

@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useDispatch } from "react-redux";
-import { deleteComment } from "../../services/userServices";
-import { commentRemoved ,fetchDeleteComment} from "../../redux/features/commentsSlice";
+import {  fetchDeleteComment} from "../../redux/features/commentsSlice";
 import "./Comment.css";
 
 const Comment = ({ comment }) => {
@@ -11,8 +10,6 @@ const Comment = ({ comment }) => {
     const dispatch = useDispatch();
 
     const deleteHandler = () => {
-        // deleteComment(comment.objectId);
-        // dispatch(commentRemoved(comment.objectId));
         dispatch(fetchDeleteComment(comment.objectId));
     }
     return (
