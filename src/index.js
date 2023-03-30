@@ -7,11 +7,13 @@ import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { fetchTrucks } from './redux/features/trucksSlice';
 import { fetchComments } from './redux/features/commentsSlice';
+import { fetchLikes } from './redux/features/likesSlice';
 import { AuthenticationProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 store.dispatch(fetchTrucks());
-store.dispatch(fetchComments())
+store.dispatch(fetchComments());
+store.dispatch(fetchLikes());
 root.render(
   <React.StrictMode>
     <Provider store={store}>

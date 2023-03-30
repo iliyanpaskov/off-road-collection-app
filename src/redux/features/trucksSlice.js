@@ -9,7 +9,6 @@ const initialState = {
 
 export const fetchTrucks = createAsyncThunk('trucks/fetchTrucks', getAllTrucks);
 
-
 export const trucksSlice = createSlice({
     name: 'trucks',
     initialState,
@@ -36,7 +35,6 @@ export const getTrucksStatus = (state) => state.trucks.status;
 export const getTrucksError = (state) => state.trucks.error;
 
 export const selectById = (state, truckId) => state.trucks.trucks.find(truck => truck.objectId === truckId);
-
 
 export const { addTruckLikes } = trucksSlice.actions;
 
