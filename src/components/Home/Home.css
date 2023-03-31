@@ -17,15 +17,10 @@
     font-weight: 400;
 }
 
-.home-title:nth-child(3){
-    text-decoration: underline;
-    margin-top: 25px;
-}
-
 .home-content-wrapper{
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 20px 0 50px 0;
 }
 
 .home-content-img-wrapper{

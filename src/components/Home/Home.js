@@ -5,8 +5,7 @@ const Home = () => {
     return (
         <section className='home-wrapper'>
             <article className='home-title-wrapper'>
-                <h1 className='home-title'>world with endless roads</h1>
-                <h1 className='home-title'>feel the freedom</h1>
+                <h1 className='home-title'>we've published 30 of the best off-road trucks</h1>
                 <h1 className='home-title'>help us find out which ones are the best 3 off-road trucks !</h1>
             </article>
             <article className='home-content-wrapper'>
@@ -26,6 +25,8 @@ const Home = () => {
                     </p>
                 </div>
             </article>
+            <h1 className='home-title'>world with endless roads</h1>
+            <h1 className='home-title'>feel the freedom</h1>
             <article className='home-content-wrapper'>
                 <div className='home-content'>
                     <h2 className='home-content-tile'>we believe</h2>
