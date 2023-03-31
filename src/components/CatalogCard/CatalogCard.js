@@ -29,7 +29,7 @@ const CatalogCard = ({ truck }) => {
             </div>
             <ul className='card-btns-list'>
                 {isAuthenticated
-                    ? <li className='card-btns-list-item details-btn'>
+                    ? <li className='card-btns-list-item'>
                         <Link to={`${truck.objectId}`}>details</Link>
                     </li>
                     : null

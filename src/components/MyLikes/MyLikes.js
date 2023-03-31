@@ -5,6 +5,7 @@ import { getAllUserLikes } from "../../redux/features/likesSlice";
 import { selectAllTrucks } from "../../redux/features/trucksSlice";
 import CatalogCard from "../CatalogCard/CatalogCard";
 import "./MyLikes.css";
+import { Link } from "react-router-dom";
 
 const MyLikes = () => {
     const { user } = useContext(AuthContext);
@@ -20,11 +21,25 @@ const MyLikes = () => {
             myTrucks.push(truck)
         }
     });
+    const hasLikes = myTrucks.length > 0;
 
     return (
-        <section className="my-likes-wrapper">
-            {myTrucks.map(x => <CatalogCard key={x.objectId} truck={x} />)}
-        </section>
+        <>
+            {
+                hasLikes
+                    ? <>
+                        <h2 className="my-likes-title">off-road trucks that you like:</h2>
+                        <section className="my-likes-wrapper">
+                            {myTrucks.map(x => <CatalogCard key={x.objectId} truck={x} />)}
+                        </section>
+                    </>
+                    : <section className="no-likes-wrapper">
+                        <h2 className="no-likes-title">no likes ?</h2>
+                        <h2 className="no-likes-title">go ahead !</h2>
+                        <Link to={'/catalog'}>Click here!</Link>
+                    </section>
+            }
+        </>
     )
 }
 

@@ -60,14 +60,8 @@
     padding: 7px 20px; 
     border-radius: 10px;
     font-weight: 600;
-}
-
-.details-btn a{
     background: purple;
-}
-
-.update-btn a{
-    background: orange;
+    font-size: 20px;
 }
 
 .card-owner{
