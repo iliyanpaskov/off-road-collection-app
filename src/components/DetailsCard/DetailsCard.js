@@ -46,9 +46,10 @@ const DetailsCard = () => {
             </article>
 
             <article className="comments-article-wrapper">
+                <h3 className="comments-article-title">comments:</h3>
                 {
                     hasComments
-                        ? <article className="comments-article">
+                    ? <article className="comments-article">
                             {currentTruckComments.map(x => <Comment key={x.objectId} comment={x} />)}
                         </article>
                         : <>

@@ -44,12 +44,12 @@ export const fetchAddLikes = createAsyncThunk('likes/fetchAddLikes', async (valu
 
 export const fetchDeleteLike = createAsyncThunk('fetch/fetchDeleteLike', async (likeId) => {
     try {
-        const res = await fetch(`${likesUrl}/${likeId}`,{
-            method:"DELETE",
+        const res = await fetch(`${likesUrl}/${likeId}`, {
+            method: "DELETE",
             headers,
         })
         const data = await res.json();
-        return [data,likeId];
+        return [data, likeId];
     } catch (error) {
         //TODO errors 
     }
@@ -95,8 +95,8 @@ export const likesSlice = createSlice({
             })
             .addCase(fetchDeleteLike.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                const [data,likeId] = action.payload;
-                const restLikes = state.likes.filter(like =>like.objectId !== likeId)
+                const [data, likeId] = action.payload;
+                const restLikes = state.likes.filter(like => like.objectId !== likeId)
                 state.likes = restLikes;
             })
             .addCase(fetchDeleteLike.rejected, (state, action) => {
@@ -111,5 +111,6 @@ export const getTruckLikes = (state, truckId, userId) => state.likes.likes
     .filter(like => like.userId === userId);
 
 export const getAllLikes = (state) => state.likes.likes
+export const getAllUserLikes = (state, userId) => state.likes.likes.filter(like => like.userId === userId);
 
 export default likesSlice.reducer;
