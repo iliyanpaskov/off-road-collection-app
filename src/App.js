@@ -26,6 +26,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path='/catalog/:objectId' element={<DetailsCard />} />
             <Route path='/my-likes' element={<MyLikes />} />
+            <Route path='/my-likes/:objectId' element={<DetailsCard />} />
           </Route>
           <Route path='/best-trucks' element={<BestTrucks />} />
           <Route path='/login' element={<Login />} />

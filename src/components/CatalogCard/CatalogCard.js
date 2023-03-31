@@ -4,7 +4,6 @@ import { AuthContext } from '../../context/AuthContext';
 
 import './CatalogCard.css';
 
-
 const CatalogCard = ({ truck }) => {
 
     const { isAuthenticated, user } = useContext(AuthContext);
@@ -32,12 +31,6 @@ const CatalogCard = ({ truck }) => {
                 {isAuthenticated
                     ? <li className='card-btns-list-item details-btn'>
                         <Link to={`${truck.objectId}`}>details</Link>
-                    </li>
-                    : null
-                }
-                {isAuthenticated && truck.ownerId === user.objectId
-                    ? <li className='card-btns-list-item update-btn'>
-                        <Link to={'/edit'}>Edit</Link>
                     </li>
                     : null
                 }

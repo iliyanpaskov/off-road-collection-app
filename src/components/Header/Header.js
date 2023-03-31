@@ -5,9 +5,9 @@ import Logo from '../common/Logo/Logo';
 import './Header.css';
 
 const Header = () => {
-    const { logoutData, isAuthenticated } = useContext(AuthContext);
+    const { user, logoutData, isAuthenticated } = useContext(AuthContext);
 
-    const logoutHandler = ()=>{
+    const logoutHandler = () => {
         logoutData();
     }
 
@@ -40,17 +40,27 @@ const Header = () => {
                             <Link to={'/best-trucks'}>top 3 trucks</Link>
                         </div>
                     </i>
+                    {
+                        isAuthenticated
+                            ? <h3>welcome {user.username}</h3>
+                            : null
+                    }
                 </ul>
                 <article className='header-title-wrapper'>
                     <h1 className='header-title'>No Road</h1>
                     <h1 className='header-title'>No problem</h1>
                 </article>
                 <ul className='header-list'>
+                    {
+                        isAuthenticated
+                            ? <h3 className='header-list-username'>welcome {user.username}</h3>
+                            : null
+                    }
                     <i className="fa-regular fa-circle-user">
                         {
                             isAuthenticated
-                                ? <UserHeaderOptions/>
-                                : <GuestHeaderOptions/>
+                                ? <UserHeaderOptions />
+                                : <GuestHeaderOptions />
                         }
                     </i>
                 </ul>
