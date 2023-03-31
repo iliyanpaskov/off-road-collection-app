@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useDispatch } from "react-redux";
 import { fetchDeleteComment } from "../../redux/features/commentsSlice";
-import "./Comment.css";
 import Modal from "../Modal/Modal";
+import "./Comment.css";
 
 const Comment = ({ comment }) => {
     const { user } = useContext(AuthContext);
