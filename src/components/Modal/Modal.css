@@ -1,0 +1,72 @@
+.modal-wrapper {
+    position: absolute;
+    background: #0000008a;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: #e3e3e3;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 7px 3px grey;
+    z-index: 3;
+}
+
+.modal i {
+    cursor: pointer;
+    position: absolute;
+    inset: 8% 95%;
+}
+
+.modal-content {
+    text-align: center;
+    font-size: 17px;
+}
+
+.modal-content-message {
+    color: red;
+    font-weight: 500;
+}
+
+.modal-btns-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.modal-btn {
+    text-transform: capitalize;
+    font-size: 17px;
+    width: 62px;
+    padding: 4px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 7px 0px #80808078
+}
+
+.confirm-btn {
+    background: #04b204;
+}
+
+.confirm-btn:hover,
+.reject-btn:hover {
+    background: #00dcff;
+    cursor: pointer;
+}
+
+.reject-btn {
+    background: red;
+}
