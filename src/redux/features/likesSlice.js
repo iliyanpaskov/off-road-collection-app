@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { errorNotification } from "../../services/notificationServices";
 
 const likesUrl = `${process.env.REACT_APP_CLASS_LIKES_URL}`;
 
@@ -22,9 +23,13 @@ export const fetchLikes = createAsyncThunk('likes/fetchLikes', async () => {
             headers,
         });
         const data = await res.json();
-        return data;
+        if (!data.error) {
+            return data;
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-        //TODO errors 
+        errorNotification(error);
     }
 });
 
@@ -36,9 +41,13 @@ export const fetchAddLikes = createAsyncThunk('likes/fetchAddLikes', async (valu
             body: JSON.stringify(values),
         });
         const data = await res.json();
-        return [data, values];
+        if (!data.error) {
+            return [data, values];
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-        //TODO errors 
+        errorNotification(error);
     }
 });
 
@@ -49,9 +58,13 @@ export const fetchDeleteLike = createAsyncThunk('fetch/fetchDeleteLike', async (
             headers,
         })
         const data = await res.json();
-        return [data, likeId];
+        if (!data.error) {
+            return [data, likeId];
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-        //TODO errors 
+        errorNotification(error);
     }
 });
 

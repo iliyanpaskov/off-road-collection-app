@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
+import { successNotification } from '../../services/notificationServices';
 import Logo from '../common/Logo/Logo';
 import './Header.css';
 
@@ -9,6 +10,7 @@ const Header = () => {
 
     const logoutHandler = () => {
         logoutData();
+        successNotification("Goodbye");
     }
 
     const GuestHeaderOptions = () => {

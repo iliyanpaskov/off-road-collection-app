@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getAllComments } from "../../services/guestServices";
+import { errorNotification } from "../../services/notificationServices";
 
 const commentsUrl = `${process.env.REACT_APP_CLASS_COMMENTS_URL}`;
 
@@ -25,9 +26,13 @@ export const fetchDeleteComment = createAsyncThunk('comments/fetchDeleteComment'
             headers,
         });
         const data = await res.json();
-        return [data, initialComment];
+        if (!data.error) {
+            return [data, initialComment];
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-        // TODO errors
+        errorNotification(error);
     }
 });
 
@@ -39,9 +44,13 @@ export const fetchAddComment = createAsyncThunk('comments/fetchAddComment', asyn
             body: JSON.stringify(values)
         });
         const data = await res.json();
-        return [data, values];
+        if (!data.error) {
+            return [data, values];
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-        // TODO errors
+        errorNotification(error);
     }
 });
 
@@ -54,7 +63,6 @@ export const commentsSlice = createSlice({
                 state.comments.push(action.payload)
             }
         },
-
     },
     extraReducers(builder) {
         builder
@@ -90,12 +98,12 @@ export const commentsSlice = createSlice({
                 const [data, initialComment] = action.payload;
                 const newComment = {
                     objectId: data.objectId,
-                    truckId:initialComment.truckId,
-                    username:initialComment.username,
-                    comment:initialComment.comment,
-                    createdAt:data.createdAt,
+                    truckId: initialComment.truckId,
+                    username: initialComment.username,
+                    comment: initialComment.comment,
+                    createdAt: data.createdAt,
                 }
-                state.comments = [...state.comments,newComment]
+                state.comments = [...state.comments, newComment]
             })
             .addCase(fetchAddComment.rejected, (state, action) => {
                 state.status = 'failed';

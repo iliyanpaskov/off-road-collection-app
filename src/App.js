@@ -6,8 +6,8 @@ import BestTrucks from './components/BestTrucks/BestTrucks';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import DetailsCard from './components/DetailsCard/DetailsCard';
-
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify'
 
 import './App.css';
 import './Tipografia.css';
@@ -31,9 +31,8 @@ function App() {
           <Route path='/best-trucks' element={<BestTrucks />} />
           <Route path='/login' element={<Login />} />
           <Route path='/sign-up' element={<SignUp />} />
-
-
         </Routes>
+        <ToastContainer/>
       </main>
       <Footer />
     </div>

@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useDispatch } from "react-redux";
 import { fetchAddComment } from "../../redux/features/commentsSlice";
+import { happyNotification } from "../../services/notificationServices";
 
 import "../Forms.css";
 
@@ -34,7 +35,8 @@ const AddCommentForm = () => {
                 dispatch(fetchAddComment(values));
             }
             addNewComment();
-            resetForm({ values: "" })
+            resetForm({ values: "" });
+            happyNotification('Comment added !')
         }
     })
 

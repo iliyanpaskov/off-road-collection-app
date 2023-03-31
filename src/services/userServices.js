@@ -1,6 +1,6 @@
+import { successNotification, errorNotification } from "./notificationServices";
 
 const signUpUrl = `${process.env.REACT_APP_SIGN_UP_URL}`;
-const trucksUrl = `${process.env.REACT_APP_CLASS_TRUCKS_URL}`;
 
 const headers = {
     "X-Parse-Application-Id": `${process.env.REACT_APP_APPLICATION_ID}`,
@@ -19,10 +19,14 @@ export async function login(url) {
     try {
         const res = await fetch(url, getSettigs);
         const data = await res.json();
-        // TODO errors
-        return data;
+        if (!data.error) {
+            successNotification("Welcome !");
+            return data;
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-
+        errorNotification(error);
     }
 }
 
@@ -34,27 +38,13 @@ export async function signUp(values) {
             body: JSON.stringify(values)
         });
         const data = await res.json();
-        return data;
+        if (!data.error) {
+            successNotification("Sign Up successfully !");
+            return data;
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-        // TODO errors
+        errorNotification(error);
     }
 }
-
-
-export async function updateTruckLikes(truckId, values) {
-    const likes = {
-        likes:values
-    }
-    try {
-        const res = await fetch(`${trucksUrl}/${truckId}`, {
-            method: "PUT",
-            headers,
-            body:JSON.stringify(likes)
-        });
-        const data = await res.json();
-        return data
-    } catch (error) {
-        // TODO errors
-    }
-}
-

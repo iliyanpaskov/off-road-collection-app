@@ -1,15 +1,16 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useContext ,useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { fetchAddLikes, getTruckLikes, fetchDeleteLike } from "../../redux/features/likesSlice";
-import "./SendLikeButton.css";
+import { happyNotification, sadNotification } from "../../services/notificationServices";
 import Modal from "../Modal/Modal";
+import "./SendLikeButton.css";
 
 
 const SendLikeButton = () => {
     const { user, isAuthenticated } = useContext(AuthContext);
-    const [openModal,setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
     const truckId = useParams();
     const currentTruckLikes = useSelector((state) => getTruckLikes(state, truckId.objectId, user.objectId));
     const isLiked = currentTruckLikes.length === 0;
@@ -33,18 +34,19 @@ const SendLikeButton = () => {
             dispatch(fetchAddLikes(newComment));
         }
         addLikes();
+        happyNotification('Thanks for your like !!!');
     };
 
-    const openModalHandler =()=>{
+    const openModalHandler = () => {
         setOpenModal(true)
     }
 
     const onClickDislikeHandler = () => {
         const currentLikeId = likeId();
         dispatch(fetchDeleteLike(currentLikeId));
-        setOpenModal(false)
+        setOpenModal(false);
+sadNotification('Your like was removed !')
     }
-
 
     return (
         <>
@@ -62,10 +64,10 @@ const SendLikeButton = () => {
                 : null
             }
             <Modal
-            open={openModal}
-            onClose={()=>setOpenModal(false)}
-            onDelete={()=>onClickDislikeHandler()}
-            message={message}
+                open={openModal}
+                onClose={() => setOpenModal(false)}
+                onDelete={() => onClickDislikeHandler()}
+                message={message}
             />
         </>
     )

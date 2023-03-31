@@ -1,3 +1,5 @@
+import { errorNotification } from "./notificationServices";
+
 const url = `${process.env.REACT_APP_CLASS_TRUCKS_URL}`;
 const commentsUrl = `${process.env.REACT_APP_CLASS_COMMENTS_URL}`;
 
@@ -10,22 +12,30 @@ const getSettigs = {
 }
 
 export async function getAllTrucks() {
-        try {
-            const res = await fetch(url,getSettigs);
-            const data = await res.json();
+    try {
+        const res = await fetch(url, getSettigs);
+        const data = await res.json();
+        if (!data.error) {
             return data.results;
-        } catch (error) {
-            // TODO errors
+        } else {
+            throw data.error;
         }
+    } catch (error) {
+        errorNotification(error);
+    }
 }
 
 
 export async function getAllComments() {
     try {
-        const res = await fetch(commentsUrl,getSettigs)
+        const res = await fetch(commentsUrl, getSettigs)
         const data = await res.json();
-        return data.results;
+        if (!data.error) {
+            return data.results;
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-            // TODO errors
+        errorNotification(error);
     }
 }
