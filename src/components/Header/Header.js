@@ -1,15 +1,16 @@
-import { useContext } from 'react';
-import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import { successNotification } from '../../services/notificationServices';
+import { useSelector,useDispatch } from 'react-redux';
 import Logo from '../common/Logo/Logo';
 import './Header.css';
+import { getUser,userLogout } from '../../redux/features/userSlice';
 
 const Header = () => {
-    const { user, logoutData, isAuthenticated } = useContext(AuthContext);
+    const dispatch = useDispatch();
+    const user = useSelector(getUser);
 
     const logoutHandler = () => {
-        logoutData();
+        dispatch(userLogout());
         successNotification("Goodbye");
     }
 
@@ -43,7 +44,7 @@ const Header = () => {
                         </div>
                     </i>
                     {
-                        isAuthenticated
+                        user.isAuthenticated
                             ? <h3>welcome {user.username}</h3>
                             : null
                     }
@@ -54,13 +55,13 @@ const Header = () => {
                 </article>
                 <ul className='header-list'>
                     {
-                        isAuthenticated
+                        user.isAuthenticated
                             ? <h3 className='header-list-username'>welcome {user.username}</h3>
                             : null
                     }
                     <i className="fa-regular fa-circle-user">
                         {
-                            isAuthenticated
+                            user.isAuthenticated
                                 ? <UserHeaderOptions />
                                 : <GuestHeaderOptions />
                         }

@@ -15,7 +15,7 @@ const headers = {
     "X-Parse-REST-API-Key": `${process.env.REACT_APP_API_KEY}`,
     "X-Parse-Revocable-Session": `${process.env.REACT_APP_SESSION}`,
     "Content-Type": "application/json",
-}
+};
 
 export const fetchComments = createAsyncThunk('comments/fetchComments', getAllComments);
 

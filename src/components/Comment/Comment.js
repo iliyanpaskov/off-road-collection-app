@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchDeleteComment } from "../../redux/features/commentsSlice";
 import { sadNotification } from "../../services/notificationServices";
 import Modal from "../Modal/Modal";
 import "./Comment.css";
+import { getUser } from "../../redux/features/userSlice";
 
 const Comment = ({ comment }) => {
-    const { user } = useContext(AuthContext);
+    const user = useSelector(getUser);
     const [openModal, setOpenModal] = useState(false);
     const isAuthor = comment.username === user.username;
     const dispatch = useDispatch();

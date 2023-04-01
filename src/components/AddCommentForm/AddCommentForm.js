@@ -1,16 +1,15 @@
 import { useFormik } from "formik";
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchAddComment } from "../../redux/features/commentsSlice";
 import { happyNotification } from "../../services/notificationServices";
 
 import "../Forms.css";
+import { getUser } from "../../redux/features/userSlice";
 
 const AddCommentForm = () => {
     const truckId = useParams().objectId;
-    const { user } = useContext(AuthContext);
+    const user= useSelector(getUser);
     const username = user.username;
     const dispatch =useDispatch();
 

@@ -1,14 +1,13 @@
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
 import { useSelector } from "react-redux";
 import { getAllUserLikes } from "../../redux/features/likesSlice";
 import { selectAllTrucks } from "../../redux/features/trucksSlice";
 import CatalogCard from "../CatalogCard/CatalogCard";
-import "./MyLikes.css";
 import { Link } from "react-router-dom";
+import { getUser } from "../../redux/features/userSlice";
+import "./MyLikes.css";
 
 const MyLikes = () => {
-    const { user } = useContext(AuthContext);
+    const user = useSelector(getUser);
     const likes = useSelector((state) => getAllUserLikes(state, user.objectId));
     const myLikedTrucksIds = [];
     likes.forEach(x => {

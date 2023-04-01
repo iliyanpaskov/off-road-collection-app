@@ -1,15 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { useState } from "react";
 import { fetchAddLikes, getTruckLikes, fetchDeleteLike } from "../../redux/features/likesSlice";
 import { happyNotification, sadNotification } from "../../services/notificationServices";
 import Modal from "../Modal/Modal";
 import "./SendLikeButton.css";
+import { getUser } from "../../redux/features/userSlice";
 
 
 const SendLikeButton = () => {
-    const { user, isAuthenticated } = useContext(AuthContext);
+    const user = useSelector(getUser);
     const [openModal, setOpenModal] = useState(false);
     const truckId = useParams();
     const currentTruckLikes = useSelector((state) => getTruckLikes(state, truckId.objectId, user.objectId));
@@ -45,12 +45,12 @@ const SendLikeButton = () => {
         const currentLikeId = likeId();
         dispatch(fetchDeleteLike(currentLikeId));
         setOpenModal(false);
-sadNotification('Your like was removed !')
+        sadNotification('Your like was removed !')
     }
 
     return (
         <>
-            {isAuthenticated
+            {user.isAuthenticated
                 ? <>
                     {isLiked
                         ? <article className="send-like-btn-wrapper">

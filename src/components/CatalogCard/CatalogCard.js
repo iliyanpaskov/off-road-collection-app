@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { AuthContext } from '../../context/AuthContext';
-
+import { useSelector } from 'react-redux';
+import { getUser } from '../../redux/features/userSlice';
 import './CatalogCard.css';
 
 const CatalogCard = ({ truck }) => {
-
-    const { isAuthenticated, user } = useContext(AuthContext);
+    const user = useSelector(getUser);
 
     return (
         <section className='card-wrapper'>
@@ -28,7 +26,7 @@ const CatalogCard = ({ truck }) => {
                 </article>
             </div>
             <ul className='card-btns-list'>
-                {isAuthenticated
+                {user.isAuthenticated
                     ? <li className='card-btns-list-item'>
                         <Link to={`${truck.objectId}`}>details</Link>
                     </li>

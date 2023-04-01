@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { AuthContext } from "../../../context/AuthContext";
 import { Navigate, Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getUser } from "../../../redux/features/userSlice";
 
 const PrivateRoute = () => {
-    const { isAuthenticated } = useContext(AuthContext);
-    if (!isAuthenticated) {
+    const user = useSelector(getUser);
+    if (!user.isAuthenticated) {
         return <Navigate to="/login" replace />;
     }
     return <Outlet />;

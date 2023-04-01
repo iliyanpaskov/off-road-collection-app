@@ -1,23 +1,22 @@
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { signUp } from "../../services/userServices";
+import { fetchSignUp, setSignUpUsername } from "../../redux/features/userSlice";
+import { useDispatch } from "react-redux";
 
 import "../Forms.css";
 
 const SignUp = () => {
-    const { loginData, user } = useContext(AuthContext);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const validate = values => {
         const errors = {};
         if (!values.username) {
             errors.username = 'Field must be filled !';
         } else if (values.username.length < 5) {
-            errors.username = 'Invalid username!';
+            errors.username = 'Username needs to be longer then 4 characters!';
         } else if (values.username.length > 16) {
-            errors.username = 'Invalid username!';
+            errors.username = 'Username needs to be shorter then 16 characters!';
         }
 
         if (!values.email) {
@@ -50,18 +49,13 @@ const SignUp = () => {
         },
         validate,
         onSubmit: values => {
+            const username = values.username;
             const getSignUp = async () => {
-                const response = await signUp(values);
-
-                loginData({
-                    objectId: response.objectId,
-                    username: values.username,
-                    sessionToken: response.sessionToken,
-                });
+                dispatch(fetchSignUp(values, username));
             }
             getSignUp();
+            dispatch(setSignUpUsername(username));
             navigate("/");
-            console.log(user);
         }
     });
 

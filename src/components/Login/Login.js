@@ -1,15 +1,14 @@
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { updateLoginUrl } from "../../services/utils";
+import { useDispatch } from "react-redux";
 import "../Forms.css";
-import { login } from "../../services/userServices";
+import { fetchLogin } from "../../redux/features/userSlice";
 
 
 const Login = () => {
-    const { loginData } = useContext(AuthContext);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const validate = values => {
         const errors = {};
@@ -36,15 +35,9 @@ const Login = () => {
         },
         validate,
         onSubmit: values => {
-            const url = updateLoginUrl("username", values.username, "password", values.password);
+            const url = updateLoginUrl('username', values.username, 'password', values.password);
             const getLogin = async () => {
-                const response = await login(`${url}`);
-                
-                loginData({
-                    objectId: response.objectId,
-                    username: response.username,
-                    sessionToken: response.sessionToken,
-                });
+                dispatch(fetchLogin(url));
             }
             getLogin();
             navigate("/");

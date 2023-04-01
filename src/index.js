@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { fetchTrucks } from './redux/features/trucksSlice';
 import { fetchComments } from './redux/features/commentsSlice';
 import { fetchLikes } from './redux/features/likesSlice';
-import { AuthenticationProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 store.dispatch(fetchTrucks());
@@ -17,11 +16,9 @@ store.dispatch(fetchLikes());
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <AuthenticationProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </AuthenticationProvider>
     </Provider>
   </React.StrictMode>
 );
