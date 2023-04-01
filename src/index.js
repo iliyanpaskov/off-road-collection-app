@@ -8,17 +8,23 @@ import { Provider } from 'react-redux';
 import { fetchTrucks } from './redux/features/trucksSlice';
 import { fetchComments } from './redux/features/commentsSlice';
 import { fetchLikes } from './redux/features/likesSlice';
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from 'redux-persist';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const persistor = persistStore(store);
+
 store.dispatch(fetchTrucks());
 store.dispatch(fetchComments());
 store.dispatch(fetchLikes());
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <PersistGate persistor={persistor}>
           <App />
-        </BrowserRouter>
+        </PersistGate>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );
