@@ -6,13 +6,14 @@ import BestTrucks from './components/BestTrucks/BestTrucks';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import DetailsCard from './components/DetailsCard/DetailsCard';
+import NotFound from './components/NotFound/NotFound';
+import MyLikes from './components/MyLikes/MyLikes';
+import PrivateRoute from './components/common/PrivateRoute/PrivateRoute';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'
 
 import './App.css';
 import './Tipografia.css';
-import PrivateRoute from './components/common/PrivateRoute/PrivateRoute';
-import MyLikes from './components/MyLikes/MyLikes';
 
 
 function App() {
@@ -31,8 +32,9 @@ function App() {
           <Route path='/best-trucks' element={<BestTrucks />} />
           <Route path='/login' element={<Login />} />
           <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/*' element={<NotFound />} />
         </Routes>
-        <ToastContainer/>
+        <ToastContainer />
       </main>
       <Footer />
     </div>

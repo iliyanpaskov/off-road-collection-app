@@ -10,9 +10,7 @@ const MyLikes = () => {
     const user = useSelector(getUser);
     const likes = useSelector((state) => getAllUserLikes(state, user.objectId));
     const myLikedTrucksIds = [];
-    likes.forEach(x => {
-        myLikedTrucksIds.push(x.truckId);
-    });
+    likes.forEach(x => myLikedTrucksIds.push(x.truckId));
     const myTrucks = [];
     const allTrucks = useSelector(selectAllTrucks);
     allTrucks.forEach(truck => {

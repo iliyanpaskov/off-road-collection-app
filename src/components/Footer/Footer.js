@@ -23,6 +23,6 @@ const Footer = () => {
             <p className="footer-text"> &copy; All rights reserved !</p>
         </section>
     )
-}
+};
 
 export default Footer;

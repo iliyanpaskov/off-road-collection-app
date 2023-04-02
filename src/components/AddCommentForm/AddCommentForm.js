@@ -3,15 +3,14 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAddComment } from "../../redux/features/commentsSlice";
 import { happyNotification } from "../../services/notificationServices";
-
-import "../Forms.css";
 import { getUser } from "../../redux/features/userSlice";
+import "../Forms.css";
 
 const AddCommentForm = () => {
     const truckId = useParams().objectId;
-    const user= useSelector(getUser);
+    const user = useSelector(getUser);
     const username = user.username;
-    const dispatch =useDispatch();
+    const dispatch = useDispatch();
 
     const validate = values => {
         const errors = {};
@@ -20,7 +19,7 @@ const AddCommentForm = () => {
         } else if (values.comment.length > 100) {
             errors.comment = 'This comment is too long!';
         }
-    }
+    };
 
     const formik = useFormik({
         initialValues: {
@@ -35,9 +34,9 @@ const AddCommentForm = () => {
             }
             addNewComment();
             resetForm({ values: "" });
-            happyNotification('Comment added !')
+            happyNotification('Comment added !');
         }
-    })
+    });
 
     return (
         <section className="form-wapper">

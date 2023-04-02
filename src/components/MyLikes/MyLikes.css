@@ -5,18 +5,18 @@
     justify-items: center;
 }
 
-.my-likes-wrapper,
+.my-likes-title,
 .no-likes-title {
     color: white;
     font-size: 35px;
     font-weight: 400;
 }
 
-.no-likes-wrapper{
+.no-likes-wrapper {
     text-align: center;
 }
 
-.no-likes-wrapper a{
+.no-likes-wrapper a {
     color: greenyellow;
     border: 1px solid #8080801f;
     padding: 10px 20px;

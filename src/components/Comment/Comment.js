@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchDeleteComment } from "../../redux/features/commentsSlice";
 import { sadNotification } from "../../services/notificationServices";
 import Modal from "../Modal/Modal";
-import "./Comment.css";
 import { getUser } from "../../redux/features/userSlice";
+import "./Comment.css";
 
 const Comment = ({ comment }) => {
     const user = useSelector(getUser);

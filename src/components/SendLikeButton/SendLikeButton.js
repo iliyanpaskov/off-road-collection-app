@@ -4,8 +4,8 @@ import { useState } from "react";
 import { fetchAddLikes, getTruckLikes, fetchDeleteLike } from "../../redux/features/likesSlice";
 import { happyNotification, sadNotification } from "../../services/notificationServices";
 import Modal from "../Modal/Modal";
-import "./SendLikeButton.css";
 import { getUser } from "../../redux/features/userSlice";
+import "./SendLikeButton.css";
 
 
 const SendLikeButton = () => {
@@ -19,7 +19,7 @@ const SendLikeButton = () => {
     const likeId = function () {
         if (!isLiked) {
             const id = currentTruckLikes[0].objectId;
-            return id
+            return id;
         }
     }
 
@@ -38,14 +38,14 @@ const SendLikeButton = () => {
     };
 
     const openModalHandler = () => {
-        setOpenModal(true)
+        setOpenModal(true);
     }
 
     const onClickDislikeHandler = () => {
         const currentLikeId = likeId();
         dispatch(fetchDeleteLike(currentLikeId));
         setOpenModal(false);
-        sadNotification('Your like was removed !')
+        sadNotification('Your like was removed !');
     }
 
     return (

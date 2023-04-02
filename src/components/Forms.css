@@ -46,7 +46,6 @@
     padding: 15px 20px;
 }
 
-
 .form-submit-btn {
     width: 150px;
     margin: 0 auto;
@@ -96,4 +95,24 @@
 .add-comment-form-title,
 .add-comment-form-btn {
     margin: 0;
+}
+
+@media all and (max-width:1400px) {
+   
+}
+
+@media all and (max-width:1200px) {
+   
+}
+
+@media all and (max-width:1024px) {
+   
+}
+
+@media all and (max-width:768px) {
+   
+}
+
+@media all and (max-width:480px) {
+   
 }

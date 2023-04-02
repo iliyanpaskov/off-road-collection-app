@@ -42,7 +42,6 @@ const Home = () => {
                     <img src="./images/of6.jpg" alt="monster-truck" />
                 </div>
             </article>
-
         </section>
     )
 }

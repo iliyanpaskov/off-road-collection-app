@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { successNotification } from '../../services/notificationServices';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Logo from '../common/Logo/Logo';
+import { getUser, userLogout } from '../../redux/features/userSlice';
 import './Header.css';
-import { getUser,userLogout } from '../../redux/features/userSlice';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const Header = () => {
     const logoutHandler = () => {
         dispatch(userLogout());
         successNotification("Goodbye");
-    }
+    };
 
     const GuestHeaderOptions = () => {
         return (
@@ -21,7 +21,7 @@ const Header = () => {
                 <Link to={'/sign-up'}>sign up</Link>
             </div>
         )
-    }
+    };
 
     const UserHeaderOptions = () => {
         return (
@@ -30,7 +30,7 @@ const Header = () => {
                 <Link to={'/'} onClick={logoutHandler}>logout</Link>
             </div>
         )
-    }
+    };
 
     return (
         <section className='header-wrapper'>

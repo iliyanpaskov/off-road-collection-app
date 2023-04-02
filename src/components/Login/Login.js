@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { updateLoginUrl } from "../../services/utils";
 import { useDispatch } from "react-redux";
-import "../Forms.css";
 import { fetchLogin } from "../../redux/features/userSlice";
+import "../Forms.css";
 
 
 const Login = () => {
@@ -26,7 +26,7 @@ const Login = () => {
             errors.password = 'Invalid password!';
         }
         return errors;
-    }
+    };
 
     const formik = useFormik({
         initialValues: {

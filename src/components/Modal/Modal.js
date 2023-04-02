@@ -16,7 +16,6 @@ const Modal = ({ open, onClose, onDelete, message }) => {
                     <button className="modal-btn reject-btn" onClick={onClose}>no</button>
                 </article>
             </article>
-
         </section>
     )
 }

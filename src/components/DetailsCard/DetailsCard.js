@@ -49,7 +49,7 @@ const DetailsCard = () => {
                 <h3 className="comments-article-title">comments:</h3>
                 {
                     hasComments
-                    ? <article className="comments-article">
+                        ? <article className="comments-article">
                             {currentTruckComments.map(x => <Comment key={x.objectId} comment={x} />)}
                         </article>
                         : <>
@@ -57,12 +57,9 @@ const DetailsCard = () => {
                             <h1 className="comments-article-title">you can write the first one !</h1>
                         </>
                 }
-
-
                 <article className="add-comments-form-wrapper">
                     <AddCommentForm />
                 </article>
-
             </article>
         </section>
     )

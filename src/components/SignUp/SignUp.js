@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { fetchSignUp, setSignUpUsername } from "../../redux/features/userSlice";
 import { useDispatch } from "react-redux";
-
 import "../Forms.css";
 
 const SignUp = () => {
@@ -58,7 +57,6 @@ const SignUp = () => {
             navigate("/");
         }
     });
-
 
     return (
         <section className="form-wapper">
