@@ -5,8 +5,21 @@
 }
 
 .catalog-title {
-    color:white;
+    color: white;
     text-align: center;
     font-size: 40px;
     font-weight: 400;
+}
+
+
+@media all and (max-width:1400px) {
+    .catalog {
+        justify-content: space-evenly;
+    }
+}
+
+@media all and (max-width:768px) {
+    .catalog-title {
+        font-size: 30px;
+    }
 }

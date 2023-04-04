@@ -24,7 +24,7 @@ body::before {
 }
 
 main {
-    width: 90%;
+    width: 98%;
     min-height: 80vh;
     padding: 150px 30px;
     margin: 0 auto;
@@ -38,7 +38,9 @@ main {
 }
 
 @media all and (max-width:1200px) {
-   
+    main {
+        padding: 130px 10px 0 10px;
+    }
 }
 
 @media all and (max-width:1024px) {

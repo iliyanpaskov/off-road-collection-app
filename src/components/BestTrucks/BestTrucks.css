@@ -1,12 +1,26 @@
-.best-trucks-wrapper{
+.best-trucks-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%;
+    max-width: 1100px;
 }
 
-.best-trucks-title{
-        color:white;
-        text-align: center;
-        font-size: 40px;
-        font-weight: 400;
+.best-trucks-title {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+
+@media all and (max-width:1024px) {
+    .best-trucks-title {
+        font-size: 30px;
+    }
+    .best-trucks-wrapper {
+      
+        width: 100%;
+       
+    }
 }

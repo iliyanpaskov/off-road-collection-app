@@ -35,45 +35,65 @@
     margin: 0;
 }
 
-.card-content-title{
+.card-content-title {
     font-size: 19px;
 }
 
-.card-content-result{
+.card-content-result {
     font-size: 17px;
 }
 
-.card-btns-list{
+.card-btns-list {
     padding: 0;
     list-style: none;
     display: flex;
     justify-content: space-around;
 }
 
-.card-btns-list-item{
+.card-btns-list-item {
     margin: 5px;
 }
 
-.card-btns-list-item a{
+.card-btns-list-item a {
     color: black;
     text-decoration: none;
-    padding: 7px 20px; 
+    padding: 7px 20px;
     border-radius: 10px;
     font-weight: 600;
     background: purple;
     font-size: 20px;
 }
 
-.card-owner{
+.card-owner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.card-owner-name{
+.card-owner-name {
     font-size: 19px;
     font-weight: 400;
     text-align: right;
     color: greenyellow;
     text-shadow: 3px 3px 5px black;
+}
+
+@media all and (max-width:1400px) {
+    .card-wrapper {
+        width: 330px;
+        padding: 8px;
+        margin: 17px 10px;
+    }
+}
+
+@media all and (max-width:768px) {
+    .card-wrapper {
+        width: 300px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .card-wrapper {
+        width: 290px;
+    }
 }

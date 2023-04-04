@@ -25,3 +25,29 @@
     font-size: 18px;
     font-weight: 300;
 }
+
+
+@media all and (max-width:1200px) {
+    .my-likes-wrapper {
+        gap: 4rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width:1024px) {
+    .my-likes-wrapper {
+        gap: 1.2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width:768px) {
+    .my-likes-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .my-likes-title {
+        text-align: center;
+        font-size: 30px;
+    }
+}

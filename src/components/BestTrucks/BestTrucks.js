@@ -56,7 +56,7 @@ const BestTrucks = () => {
                 : <Loading />
             }
         </>
-    )
+    );
 }
 
 export default BestTrucks;

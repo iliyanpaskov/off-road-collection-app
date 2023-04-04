@@ -41,3 +41,64 @@
     text-shadow: -2px 1px 2px #fffb01;
     transform: translate(-50%, -50%);
 }
+
+
+@media all and (min-width:1500px) {}
+
+@media all and (max-width:1400px) {}
+
+@media all and (max-width:1200px) {}
+
+@media all and (max-width:1024px) {
+    .details-card-likes-count {
+        font-size: 40px;
+    }
+
+    .details-card-medal-wrapper {
+        width: 70px;
+    }
+
+    .place {
+        font-size: 38px;
+    }
+
+}
+
+@media all and (max-width:768px) {
+    .details-card-owner{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .details-card-likes{
+        width: 100%;
+    }
+
+    .details-card-likes-count {
+        font-size: 50px;
+    }
+
+    .details-card-medal-wrapper {
+        width: 83px;
+    }
+
+    .place {
+        font-size: 48px;
+    }
+}
+
+@media all and (max-width:480px) {
+
+    .details-card-likes-count {
+        font-size: 35px;
+    }
+
+    .details-card-medal-wrapper {
+        width: 60px;
+    }
+
+    .place {
+        font-size: 38px;
+    }
+}

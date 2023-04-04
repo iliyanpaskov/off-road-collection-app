@@ -49,3 +49,27 @@
     border-top: 1px solid white;
     text-align: center;
 }
+
+@media all and (max-width:768px) {
+    .footer{
+        width: 100%;
+    }
+
+    .footer-title {
+        font-size: 20px;
+    }
+
+    .footer-social-media-list-item i{
+        font-size: 22px;
+    }
+
+    .footer-text{
+        width: 60%;
+    }
+}
+
+@media all and (max-width:480px) {
+    .footer{
+        flex-direction: column;
+    }
+}

@@ -71,3 +71,13 @@
 .reject-btn {
     background: red;
 }
+
+@media all and (max-width:480px) {
+    .modal {
+        width: 210px;
+    }
+
+    .modal i {
+        inset: 6% 90%;
+    }
+}

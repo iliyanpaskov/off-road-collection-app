@@ -25,3 +25,25 @@ p{
     line-height: 1.8rem;
    }
 }
+
+@media all and (max-width:1400px) {
+    p{
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width:1200px) {
+   
+}
+
+@media all and (max-width:1024px) {
+   
+}
+
+@media all and (max-width:768px) {
+   
+}
+
+@media all and (max-width:480px) {
+   
+}

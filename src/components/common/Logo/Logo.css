@@ -6,3 +6,21 @@
 .logo img{
     width: 100%;
 }
+
+@media all and (max-width:1024px) {
+    .header-logo-wrapper{
+        width: 185px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .header-logo-wrapper{
+        width: 150px;
+    }
+}
+
+@media all and (max-width:350px) {
+    .header-logo-wrapper{
+        display: none;
+    }
+}

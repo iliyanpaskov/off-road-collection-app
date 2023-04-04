@@ -32,3 +32,19 @@
     cursor: pointer;
     font-size: 20px;
 }
+
+@media all and (max-width:1024px) {
+    .comment-wrapper {
+        width: 300px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .comment-wrapper {
+        width: 250px;
+    }
+
+    .delete-comment {
+        inset: 8% 88%;
+    }
+}
